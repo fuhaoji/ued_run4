@@ -48,7 +48,7 @@
     - operator identify laser locaton and perform necessary tuning
 
 ## checkAndorEbeam.py
-    script for checking E-beam on far detector (Andor)
+    script for checking E-beam on far detector Andor1
     - under development
 
 ## PVnamelist.py
