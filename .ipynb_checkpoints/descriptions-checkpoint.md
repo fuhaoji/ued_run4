@@ -1,7 +1,7 @@
 ## Python automation scripts for MeV-UED run4 operations
 ## Fuhao Ji @ AD, Nov 20, 2023
 
-## run on UED-DAQ, do
+## if run on UED-DAQ, do
     source load_env.sh
     python "script.py"
 

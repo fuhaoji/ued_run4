@@ -110,9 +110,9 @@ def save_stage_pos(file_path = 'pos.txt'):
     
     try:
         np.savetxt(file_path, pos, delimiter=',', fmt='%f')
-        print(f"Array saved to {file_path} successfully.")
+        print("Array saved successfully.")
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print("An error occurred")
         
         
 def load_stage_pos(file_path = 'pos.txt'):
@@ -121,7 +121,7 @@ def load_stage_pos(file_path = 'pos.txt'):
         print(array)
         return array
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print("An error occurred")
         return None
     
 def set_stage_pos(file_path = 'pos.txt'):
@@ -147,9 +147,9 @@ def save_sample_settings(file_path = 'settings.txt'):
     
     try:
         np.savetxt(file_path, settings, delimiter=',', fmt='%f')
-        print(f"Array saved to {file_path} successfully.")
+        print("Array saved successfully.")
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print("An error occurred")
         
 def load_settings(file_path = 'settings.txt'):
     try:
@@ -157,7 +157,7 @@ def load_settings(file_path = 'settings.txt'):
         print(array)
         return array
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
+        print("An error occurred")
         return None
     
     
