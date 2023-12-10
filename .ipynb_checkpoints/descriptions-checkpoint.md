@@ -6,7 +6,7 @@
     python "script.py"
 
 ## saveBi.py, saveFC.py, saveSi.py, saveSJ.py, saveYAG.py, saveSettings.py
-    save the sample stage positions (x, rel x, y, z) and ND wheel set point to txt files
+    save the sample stage positions (x, rel x, y, z) and ND wheel/half wave plate set point to txt files
     file names stand for specific gas sources/samples used in GUED user run
     "FC": Flow Cell
     "SJ": Slit Jet
@@ -16,7 +16,7 @@
     "saveSettings": save settings for arbitrary sample/gas source
     
 ## setBi.py, setFC.py, setSi.py, setSJ.py, setYAG.py, loadSettings.py
-    set sample stage positions and ND wheel set point using numbers saved in txt file
+    set sample stage positions and ND wheel/half wave plate set point using numbers saved in txt file
     
 ## goToBi.py, goToFC.py, goToSi.py, goToSJ.py, goToYAG.py, loadStage.py
     set sample stage positions using numbers saved in txt file
