@@ -6,16 +6,16 @@ from time import sleep
 import time
 from PVnamelist import pvnamelist
 import numpy as np
+import sys
 
 ## pv names for basic operations, need update
 pv_motor_x_rel = 'ASTA:SMAR02:M1:MOTOR' # sampel stage motor rel X
 pv_motor_x = 'ASTA:PI02:M3:MOTOR' # sampel stage motor X
 pv_motor_y = 'ASTA:PI02:M2:MOTOR' # sampel stage motor Y
 pv_motor_z = 'ASTA:PI02:M1:MOTOR' # sampel stage motor Z
-
 pv_gun_uv_throttle = 'MOTR:AS01:MC03:CH1:MOTOR'  # gun UV throttle
 pv_NDwheel = 'MOTR:AS01:MC04:CH2:MOTOR' # pump laser ND wheel
-
+pv_HWP = 'MOTR:AS01:MC04:CH3:MOTOR' # pump laser half wave plate
 pv_phosphor = 'ASTA:BO:2114-9:BIT2' # phosphor screen In/Out
 
 
@@ -62,7 +62,8 @@ def pumpLaserOn():
 
 def pumpLaserLowest():
     print("pump energy go to lowest")
-    caput(pv_NDwheel, -150) # pump laser ND wheel, lowest power at -150
+#     caput(pv_NDwheel, -150) # pump laser ND wheel, lowest power at -150
+    caput(pv_HWP, 70)
     return
 
 def gunUVOff():
@@ -140,10 +141,12 @@ def save_sample_settings(file_path = 'settings.txt'):
     motor_y = caget(pv_motor_y)
     motor_z = caget(pv_motor_z)
     
-    # obtain pump laser NDwheel 
+    # obtain pump laser NDwheel and halfwave plate
     NDwheel = caget(pv_NDwheel)
+    HWP = caget(pv_HWP)
     
-    settings = np.array([motor_x_rel, motor_x, motor_y, motor_z, NDwheel])
+#     settings = np.array([motor_x_rel, motor_x, motor_y, motor_z, NDwheel])
+    settings = np.array([motor_x_rel, motor_x, motor_y, motor_z, HWP])
     
     try:
         np.savetxt(file_path, settings, delimiter=',', fmt='%f')
@@ -168,7 +171,8 @@ def set_sample_settings(file_path = 'settings.txt'):
     caput(pv_motor_x, array[1])    ## sample stage motor X
     caput(pv_motor_y, array[2])   ## sample stage motor Y
     caput(pv_motor_z, array[3])    ## sample stage motor Z
-    caput(pv_NDwheel, array[4])   ## pump laser ND wheel position
+#     caput(pv_NDwheel, array[4])   ## pump laser ND wheel position
+    caput(pv_HWP, array[4])   ## pump laser half wave plate position
     return
     
     

@@ -7,6 +7,7 @@ import time
 from PVnamelist import pvnamelist
 from run4_basics import *
 import numpy as np
+import sys
 
 def setBi():
     pumpLaserOff()
@@ -102,7 +103,8 @@ def waitForInput_test():
     
     # wait operator to check status
     print("Please check status")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     return
     
 def spatialOverlap():
@@ -123,7 +125,8 @@ def spatialOverlap():
     gunUVOn()
     print("Please check e-beam location, move marker to ebeam")
     
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     
     print("setting camera gain and exp")
     caput('ASPS04:cam1:Gain', 10)
@@ -132,7 +135,8 @@ def spatialOverlap():
     
     pumpLaserOn()
     print("Please check pump laser location, move laser to marker")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     
     pumpLaserOff()
     sleep(1)
@@ -161,7 +165,8 @@ def checkEbeam():
     gunUVOn()
     print("Please check e-beam location, move marker to ebeam")
     
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     
     print("setting camera gain and exp")
     caput('ASPS04:cam1:Gain', 0)
@@ -182,20 +187,24 @@ def checkAndorEbeam():
     caput('ASTA:BO:2114-9:BIT2', 1) # insert the fardetector phosphor
     
     print("Please set Andor detector gain = 10, exp = 0.1")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     
     gunUVOn()
     
     print("Please check e-beam on Andor detector")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     # sleep(5)
     
     print("Please Insert collimator to 93 mm")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     sleep(5)
     
     print("Please tune steering zero and collimator to optimize beam")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     return
     
     
@@ -217,7 +226,8 @@ def checkPumpLaser():
     
     pumpLaserOn()
     print("Please check pump laser location, move laser to marker")
-    input("press Enter to continue...")
+    print("Press Enter to continue...")
+    sys.stdin.readline()
     
     pumpLaserOff()
     sleep(1)
