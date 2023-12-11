@@ -129,7 +129,7 @@ def spatialOverlap():
     sys.stdin.readline()
     
     print("setting camera gain and exp")
-    caput('ASPS04:cam1:Gain', 10)
+    caput('ASPS04:cam1:Gain', 0)
     caput('ASPS04:cam1:AcquireTime', 0.1)   
     sleep(3)
     
@@ -220,7 +220,7 @@ def checkPumpLaser():
     sleep(2)
     
     print("setting camera gain and exp")
-    caput('ASPS04:cam1:Gain', 10)
+    caput('ASPS04:cam1:Gain', 0)
     caput('ASPS04:cam1:AcquireTime', 0.1)   
     sleep(3)
     
